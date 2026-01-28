@@ -273,6 +273,11 @@ M.essential_mappings = function()
     key = key + 1
   end
 
+  vim.keymap.set("i", "<Char-32>", function()
+    finish_2s()
+    return "<Char-32>"
+  end, { noremap = true, silent = true, expr = true, desc = "Korean-IME.nvim space" })
+
   vim.keymap.set("i", "<BS>", function()
     return revert()
   end, { noremap = true, silent = true, expr = true, desc = "Korean-IME.nvim backspace" })
