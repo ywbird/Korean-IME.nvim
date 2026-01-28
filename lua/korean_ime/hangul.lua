@@ -273,9 +273,10 @@ M.essential_mappings = function()
     key = key + 1
   end
 
-  vim.keymap.set("i", "<Char-32>", function()
+  -- Fix: https://github.com/kiyoon/Korean-IME.nvim/issues/2
+  vim.keymap.set("i", "<space>", function()
     finish_2s()
-    return "<Char-32>"
+    return "<space>"
   end, { noremap = true, silent = true, expr = true, desc = "Korean-IME.nvim space" })
 
   vim.keymap.set("i", "<BS>", function()
